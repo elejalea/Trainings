@@ -112,6 +112,13 @@ test = 'совершить'
 print(test[0],test[0:6],test[:6],test[2:6],sep='|')
 Output: с|соверш|соверш|верш
 ________________________________
+test = [1,2,3,4,5,6,7,8,9,10]
+print(test[0:5],test[:5])
+print(test[5:11],test[5:])
+Output:
+[1, 2, 3, 4, 5] [1, 2, 3, 4, 5] 
+[6, 7, 8, 9, 10] [6, 7, 8, 9, 10]
+________________________________
 text = 'Ёж ел ёлку'
 newtext = text.replace('Ё','Е')
 newtext = newtext.replace('ё','е')
@@ -132,4 +139,76 @@ print(s.find('a'))
 print(s.find('e'))
 Output: 0
 -1
+________________________________
+list = ['A', 'B', 'C']
+list[0] = 'Z'
+print(list)
+Output: ['Z', 'B', 'C']
+________________________________
+list = ['A', 'B', 'C']
+list += ['Z']
+list.append('Z')
+print(list)
+Output: ['A', 'B', 'C', 'Z']
+________________________________
+list = ['A', 'B', 'C', 'Z']
+list.insert(-2,'Y')
+print(list)
+Output: ['A', 'B', 'Y', 'C', 'Z']
+________________________________
+list = ['A', 'B', 'C', 'Z']
+list.remove('Z')
+del list[-1]
+print(list)
+Output: ['A', 'B', 'C']
+________________________________
+list = ['A', 'B', 'C', 'Z']
+print(list.index('C'))
+Output: 2
+________________________________
+list = ['Y', 'C', 'Z', 'B']
+print(sorted(list))
+
+list = ['Y', 'C', 'Z', 'B']
+sorted(list)
+print(list)
+Output: ['B', 'C', 'Y', 'Z']
+________________________________
+list = ['A', 'B', 'C', 'D']
+list.reverse()
+print(list)
+Output: ['D', 'C', 'B', 'A']
+________________________________
+# Генерирование списка
+a = [i for i in range(5)]
+print(a)
+Otput: [0, 1, 2, 3, 4, 5]
+_________________________________
+
+a = [0 for i in range(5)]
+print(a)
+Output: [0, 0, 0, 0, 0, 0]
+_________________________________
+
+a = [int(i) for i in input().split()]
+print(a)
+Output: 43, 67, 98
+[43, 67, 98] 
+________________________________
+# Двумерный список
+n = 3
+a = [[0] * n] * n
+print(a)
+a[0][0] = 5
+print(a)
+Output:
+[[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+[[5, 0, 0], [5, 0, 0], [5, 0, 0]]
+________________________________
+n = 3
+a = [[0] * n for i in range(n)]
+a[0][0] = 7
+print(a)
+Output:
+[[7, 0, 0], [0, 0, 0], [0, 0, 0]]
 ________________________________
