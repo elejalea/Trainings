@@ -1,0 +1,14 @@
+# Variable assignment
+x <- 42
+y <- 40
+z <- x-y
+z
+
+my_character <- "some text"
+
+# Check class of my_var
+class(my_var)
+
+# Decimal values like 4.5 are called numerics.
+# Natural numbers like 4 are called integers. Integers are also numerics.
+# R is case sensitive
