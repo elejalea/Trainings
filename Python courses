@@ -65,10 +65,25 @@ txt = 'abc abc abc'
 print(txt.split())
 Output: ['abc', 'abc', 'abc']
 ________________________________
-for i in 'hello world':
-    if i != 'a':
-        print('Буквы a в строке нет')
-        break
+a, b = input().split()
+print(int(a)/int(b))
+
+a, b = (int(i) for i in input().split())
+print(a/b)
+Output: 10 5
+2.0
+________________________________
+text = input()
+cnt = 0
+for i in text:
+    if i == 'a':
+        cnt += 1
+print(cnt)
+
+text = input()
+print(text.count('a'))
+Output: ababa
+3
 ________________________________
 for i in range(2,10):
     print(i, end=' ')
@@ -78,6 +93,7 @@ for i in range(2,10,2):
     print(i, end=' ')
 Output: 2 4 6 8 
 ________________________________
+# Вложенный цикл
 n = int(input())
 m = int(input())
 for i in range(n):
@@ -91,4 +107,29 @@ Output:
 ******
 ******
 ****** 
+________________________________
+test = 'совершить'
+print(test[0],test[0:6],test[:6],test[2:6],sep='|')
+Output: с|соверш|соверш|верш
+________________________________
+text = 'Ёж ел ёлку'
+newtext = text.replace('Ё','Е')
+newtext = newtext.replace('ё','е')
+print(newtext)
+Output: Еж ел елку
+________________________________
+text = 'ababa'
+i = input()
+if i in text:
+  print(True)
+else:
+  print(False)
+Output: n
+False
+________________________________
+s = 'abcda'
+print(s.find('a'))
+print(s.find('e'))
+Output: 0
+-1
 ________________________________
