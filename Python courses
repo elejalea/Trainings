@@ -268,3 +268,42 @@ Output:
 ['one', 'indef']
 ['state', 'express']
 ________________________________
+inf = open('file.txt', 'r')
+s1 = inf.readline()
+s2 = inf.readline()
+inf.close()
+
+with open('text.txt') as inf:
+    s1 = inf.readline().strip()
+    s2 = inf.readline().strip()
+#.strip убирает служебные символы
+
+# Построчное чтение файла
+with open('input.txt') as inf:
+    for line in inf:
+        line = line.strip()
+        print(line)
+________________________________
+inf = open('file.txt', 'w')
+inf.write('Some text\n')
+inf.write(str(25))
+inf.close()
+
+with open('text.txt', 'w') as inf:
+    inf.write('Some text\n')
+________________________________
+with open('D:\TM_EVN\evn_dict.txt', 'r', encoding='UTF-8') as data:
+  with open('C:\Desktop\ki.txt', 'w', encoding='UTF-8') as ki:
+    for line in data:
+      line = line.strip()
+      ki.write(line)
+      ki.write('\n')
+________________________________
+# Вызов функции из импортированного модуля
+import my_module 
+my_module.foo()
+
+# Импорт и вызов одной функции из модуля
+from my_module import foo
+foo()
+________________________________
