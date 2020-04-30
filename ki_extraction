@@ -7,10 +7,7 @@ import re
 
 to_find = r'^\w+кӣ\n[\w\W]+\.'
 
-with open('D:\TM_EVN\evn_dict.txt', 'r', encoding='UTF-8') as data:
-    with open('C:\Desktop\ki.txt', 'w', encoding='UTF-8') as ki:
-        for line in data:
-            line = line.strip()
-            if re.findall(to_find, line):
-                ki.write(line)
-                ki.write('\n')
+with open('D:\TM_EVN\evn_dict.txt', 'r', encoding='UTF-8') as data, open ('C:\Desktop\ki.txt', 'w', encoding='UTF-8') as ki:
+    if re.findall(to_find, data):
+        ki.write(to_find)
+        ki.write('\n')
