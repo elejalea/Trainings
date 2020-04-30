@@ -261,3 +261,10 @@ for key in d.keys() / in d:
     print(key, end='; ')
 Output: C; A; T; G; 
 ________________________________
+d = {'bat': ['one', 'indef'], 'adierazi': ['state', 'express']}
+for value in d.values():
+    print(value)
+Output: 
+['one', 'indef']
+['state', 'express']
+________________________________
