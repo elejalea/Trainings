@@ -5,10 +5,10 @@
    
 import re
 
-to_find = r'^\w+кӣ\n[\w\W]+\.'
+to_find = r'\w+̄*кӣ\n[^.]+\.'
 
 with open('D:\TM_EVN\evn_dict.txt', 'r', encoding='UTF-8') as data, open ('C:\Desktop\ki.txt', 'w', encoding='UTF-8') as ki:
     smth = data.read()
     smth2 = re.findall(to_find, smth)
-    ki.write(str(smth2))
-    ki.write('\n')
+    for elem in smth2:
+        ki.write(elem + '\n')
