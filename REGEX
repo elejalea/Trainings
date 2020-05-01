@@ -1,1 +1,9 @@
 re.findall(pattern, emails, flags=re.IGNORECASE) 
+
+re.findall(r'<p>(.*)</p>', text)
+
+mail = r'.*@\w+\.\w+'
+
+print(re.findall(r'\w+', '443031 Самара'))
+Output: ['443031', 'Самара']
+__________________________________
