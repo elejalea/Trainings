@@ -1,15 +1,6 @@
 https://rdrr.io/snippets/
 
-# Variable assignment
-x <- 42
-y <- 40
-z <- x-y
-z
-
-# Check class of my_var
 class(my_var)
-
-# Decimal 4.5 are numerics. Natural numbers 4 are integers. Integers are also numerics.
 
 poker_vector <- c(140, -50, 20, -120, 240)
 total_poker <- sum(poker_vector)
