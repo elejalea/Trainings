@@ -172,3 +172,6 @@ name               type diameter rotation rings
 ______________________________________________________________________________________________________
 
 LISTS
+
+my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
+shining_list$actors[2]
