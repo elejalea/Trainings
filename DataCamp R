@@ -1,5 +1,6 @@
-https://rdrr.io/snippets/
+VECTORS
 
+https://rdrr.io/snippets/
 class(my_var)
 
 poker_vector <- c(140, -50, 20, -120, 240)
@@ -27,6 +28,8 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 [3,]    7    8    9
 ______________________________________________________________________________________________________
 
+MATRICES
+
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
 return_jedi <- c(309.306, 165.8)
@@ -51,7 +54,7 @@ A New Hope              460.998  314.4          775.398
 The Empire Strikes Back 290.475  247.9          538.375
 Return of the Jedi      309.306  165.8          475.106
 
-#Combine two matrixes in one
+#Combine two matrices in one
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
 
 # my_matrix[,1] selects all elements of the first column.
@@ -62,6 +65,9 @@ two_films_non_us <- all_wars_matrix[1:2,2]
                   314.4                   247.9
 visitors <- all_wars_matrix / ticket_prices_matrix 
 ______________________________________________________________________________________________________
+
+FACTORS
+
 sex_vector <- c("Male", "Female", "Female", "Male", "Male")
 factor_sex_vector <- factor(sex_vector)
 factor_sex_vector
@@ -95,3 +101,74 @@ summary(factor_speed_vector)
   slow medium   fast 
      2      2      1
 ______________________________________________________________________________________________________
+
+DATA FRAMES
+
+head(mtcars)
+tail(mtcars)
+str(mtcars)
+
+name <- c("Mercury", "Venus", "Earth", "Mars", "Jupiter", "Saturn", "Uranus", "Neptune")
+type <- c("Terrestrial planet", "Terrestrial planet", "Terrestrial planet", 
+          "Terrestrial planet", "Gas giant", "Gas giant", "Gas giant", "Gas giant")
+diameter <- c(0.382, 0.949, 1, 0.532, 11.209, 9.449, 4.007, 3.883)
+rotation <- c(58.64, -243.02, 1, 1.03, 0.41, 0.43, -0.72, 0.67)
+rings <- c(FALSE, FALSE, FALSE, FALSE, TRUE, TRUE, TRUE, TRUE)
+
+planets_df <- data.frame(name, type, diameter, rotation, rings)
+planets_df
+8 observations of  5 variables
+     name               type diameter rotation rings
+1 Mercury Terrestrial planet    0.382    58.64 FALSE
+2   Venus Terrestrial planet    0.949  -243.02 FALSE
+3   Earth Terrestrial planet    1.000     1.00 FALSE
+4    Mars Terrestrial planet    0.532     1.03 FALSE
+5 Jupiter          Gas giant   11.209     0.41  TRUE
+6  Saturn          Gas giant    9.449     0.43  TRUE
+7  Uranus          Gas giant    4.007    -0.72  TRUE
+8 Neptune          Gas giant    3.883     0.67  TRUE
+
+
+# my_df[1:3,2:4] selects rows 1, 2, 3 and columns 2, 3, 4 
+# Print out diameter of Mercury (row 1, column 3)
+planets_df[1,3]
+# Print out data for Mars (entire fourth row)
+planets_df[4, ]
+# Select first 5 values of diameter column
+planets_df[1:5,"diameter"]
+# Select all elements of the variable diameter
+planets_df$diameter
+
+planets_df[rings_vector, "name"]
+[1] Jupiter Saturn  Uranus  Neptune
+planets_df[rings_vector, ]
+# данные всех колонок
+
+subset(planets_df, subset = diameter < 1)
+subset(planets_df, subset = rings)
+
+a <- c(50, -1, 0, 100)
+order(a)
+2 3 1 4
+a[order(a)]
+-1   0  50 100
+
+
+# Use order() to create positions
+positions <- order(planets_df$diameter)
+# Use positions to sort planets_df
+positions[order(positions)]
+planets_df[positions, ]
+
+name               type diameter rotation rings
+1 Mercury Terrestrial planet    0.382    58.64 FALSE
+4    Mars Terrestrial planet    0.532     1.03 FALSE
+2   Venus Terrestrial planet    0.949  -243.02 FALSE
+3   Earth Terrestrial planet    1.000     1.00 FALSE
+8 Neptune          Gas giant    3.883     0.67  TRUE
+7  Uranus          Gas giant    4.007    -0.72  TRUE
+6  Saturn          Gas giant    9.449     0.43  TRUE
+5 Jupiter          Gas giant   11.209     0.41  TRUE
+______________________________________________________________________________________________________
+
+LISTS
