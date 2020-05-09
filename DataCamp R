@@ -71,3 +71,22 @@ two_films_non_us <- all_wars_matrix[1:2,2]
                   314.4                   247.9
 visitors <- all_wars_matrix / ticket_prices_matrix 
 ______________________________________________________________________________________________________
+sex_vector <- c("Male", "Female", "Female", "Male", "Male")
+factor_sex_vector <- factor(sex_vector)
+factor_sex_vector
+[1] Male   Female Female Male   Male  
+Levels: Female Male
+
+nominal variables <- ("Yakutsk", "Irkutsk", "Krasnoyarsk")
+ordinal variables <- c("High", "Low", "High","Low", "Medium")
+factor_temperature_vector <- factor(temperature_vector, order = TRUE, levels = c("Low", "Medium", "High"))
+> factor_temperature_vector
+[1] High   Low    High   Low    Medium
+Levels: Low < Medium < High
+
+survey_vector <- c("M", "F", "F", "M", "M")
+factor_survey_vector <- factor(survey_vector)
+levels(factor_survey_vector) <- c("Female", "Male")
+factor_survey_vector
+[1] Male   Female Female Male   Male  
+Levels: Female Male
