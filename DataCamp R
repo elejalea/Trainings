@@ -175,7 +175,7 @@ LISTS
 my_list <- list(vec = my_vector, mat = my_matrix, df = my_df)
 shining_list$actors[2]
 
-LOGIC OPERATORS
+RELATIONAL OPERATORS
 
 # Is last under 5 or above 10?
 last < 5 | last > 10
@@ -194,3 +194,37 @@ second <- li_df[,"day2"]
 extremes <- c(second > 25 | second < 5)
 # Count the number of TRUEs in extremes
 sum(extremes)
+______________________________________________________________________________________________________
+
+IF STATEMENTS
+
+if (num_views > 15) {
+  print("You are popular!")
+}
+
+if (num_views > 15) {
+  print("You're popular!")
+} else {
+  print("Try to be more visible!")
+}
+
+if (num_views > 15) {
+  print("You're popular!")
+} else if (num_views <= 15 & num_views > 10) {
+  print("Your number of views is average")
+} else {
+  print("Try to be more visible!")
+}
+
+li <- 15
+fb <- 9
+
+# Code the control-flow construct
+if (li & fb >= 15) {
+  sms <- 2 * (li + fb)
+} else if (li & fb > 10) {
+  sms <- 0.5 * (li + fb)
+} else {
+  sms <- li + fb
+}
+24 
