@@ -228,3 +228,22 @@ if (li & fb >= 15) {
   sms <- li + fb
 }
 24 
+____________________________________________________________________________________
+LOOP
+
+speed <- 64
+while (speed > 30) {
+  print("Slow down!")
+  speed <- speed - 7
+}
+
+while (speed > 30) {
+  print(paste("Your speed is",speed))
+  if (speed > 48) {
+    print("Slow down big time!")
+    speed = speed - 11
+  } else {
+    print("Slow down!")
+    speed = speed - 6
+  }
+}
