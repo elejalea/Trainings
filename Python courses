@@ -314,3 +314,16 @@ my_module.foo()
 from my_module import foo
 foo()
 ________________________________
+period = {'earth':1.0, 'jupiter':0.415, 'saturn':44}
+period['saturn'] = 0.455
+print(period)
+Output: {'earth': 1.0, 'jupiter': 0.415, 'saturn': 0.455}
+________________________________
+area = [0.14, 4.74, 14.09, 6.13]
+for index, x in enumerate(area): 
+  print('Room' + str(index+1) + ' -', str(x))
+Output:
+('Room1 -', '0.14')
+('Room2 -', '4.74')
+('Room3 -', '14.09')
+('Room4 -', '6.13')
