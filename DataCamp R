@@ -28,3 +28,24 @@ selection_vector <- poker_vector > 0
 poker_winning_days <- poker_vector[selection_vector] 
    Monday Wednesday    Friday 
       140        20       240
+
+
+matrix(1:9, byrow = TRUE, nrow = 3)
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    4    5    6
+[3,]    7    8    9
+
+new_hope <- c(460.998, 314.4)
+empire_strikes <- c(290.475, 247.900)
+return_jedi <- c(309.306, 165.8)
+star_wars_matrix <- matrix(c(new_hope, empire_strikes, return_jedi), nrow = 3, byrow = TRUE)
+
+region <- c("US", "non-US")
+titles <- c("A New Hope", "The Empire Strikes Back", "Return of the Jedi")
+colnames(star_wars_matrix) <- region
+rownames(star_wars_matrix) <- titles
+                             US non-US
+A New Hope              460.998  314.4
+The Empire Strikes Back 290.475  247.9
+Return of the Jedi      309.306  165.8
