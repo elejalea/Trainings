@@ -90,3 +90,17 @@ levels(factor_survey_vector) <- c("Female", "Male")
 factor_survey_vector
 [1] Male   Female Female Male   Male  
 Levels: Female Male
+
+summary(factor_survey_vector)
+Female   Male 
+     2      3
+     
+speed_vector <- c("medium", "slow", "slow", "medium", "fast")
+factor_speed_vector <- factor(speed_vector, ordered = TRUE, levels =c("slow", "medium", "fast"))
+factor_speed_vector
+[1] medium slow   slow   medium fast  
+Levels: slow < medium < fast
+summary(factor_speed_vector)
+  slow medium   fast 
+     2      2      1
+______________________________________________________________________________________________________
