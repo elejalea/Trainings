@@ -6,11 +6,25 @@ y <- 40
 z <- x-y
 z
 
-my_character <- "some text"
-
 # Check class of my_var
 class(my_var)
 
-# Decimal values like 4.5 are called numerics.
-# Natural numbers like 4 are called integers. Integers are also numerics.
-# R is case sensitive
+# Decimal 4.5 are numerics. Natural numbers 4 are integers. Integers are also numerics.
+
+poker_vector <- c(140, -50, 20, -120, 240)
+total_poker <- sum(poker_vector)
+# Calculate the average
+mean(poker_vektor)
+
+names(poker_vector) <- c("Monday", "Tuesday", "Wednesday", "Thursday", "Friday")
+poker_Monday <- poker_vector[1]
+poker_midweek <- poker_vector[c(2, 3, 4)] / poker_vector[2:4]
+poker_start <- poker_vector[c("Monday","Tuesday", "Wednesday")]
+  
+poker_vector <- c(140, -50, 20, -120, 240)
+selection_vector <- poker_vector > 0
+   Monday   Tuesday Wednesday  Thursday    Friday 
+     TRUE     FALSE      TRUE     FALSE      TRUE
+poker_winning_days <- poker_vector[selection_vector] 
+   Monday Wednesday    Friday 
+      140        20       240
