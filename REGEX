@@ -37,3 +37,9 @@ tokenized_sent = word_tokenize(sentences[3])
 # Make a set of unique tokens in the entire scene: unique_tokens
 unique_tokens = set(word_tokenize(scene_one))
 ____________________________________________________________________
+from nltk.tokenize import regexp_tokenize, TweetTokenizer 
+# Write a pattern that matches both mentions (@) and hashtags
+pattern2 = r"([@|#]\w+)"
+# Use the pattern on the last tweet in the tweets list
+mentions_hashtags = regexp_tokenize(tweets[-1], pattern2)
+print(mentions_hashtags)
