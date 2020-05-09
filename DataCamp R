@@ -34,7 +34,7 @@ matrix(1:9, byrow = TRUE, nrow = 3)
 [1,]    1    2    3
 [2,]    4    5    6
 [3,]    7    8    9
-
+______________________________________________________________________________________________________
 
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
@@ -62,3 +62,12 @@ Return of the Jedi      309.306  165.8          475.106
 
 #Combine two matrixes in one
 all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
+
+# my_matrix[,1] selects all elements of the first column.
+# my_matrix[1,] selects all elements of the first row.
+
+two_films_non_us <- all_wars_matrix[1:2,2]
+             A New Hope The Empire Strikes Back 
+                  314.4                   247.9
+visitors <- all_wars_matrix / ticket_prices_matrix 
+______________________________________________________________________________________________________
