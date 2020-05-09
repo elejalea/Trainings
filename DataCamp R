@@ -29,12 +29,12 @@ poker_winning_days <- poker_vector[selection_vector]
    Monday Wednesday    Friday 
       140        20       240
 
-
 matrix(1:9, byrow = TRUE, nrow = 3)
      [,1] [,2] [,3]
 [1,]    1    2    3
 [2,]    4    5    6
 [3,]    7    8    9
+
 
 new_hope <- c(460.998, 314.4)
 empire_strikes <- c(290.475, 247.900)
@@ -49,3 +49,16 @@ rownames(star_wars_matrix) <- titles
 A New Hope              460.998  314.4
 The Empire Strikes Back 290.475  247.9
 Return of the Jedi      309.306  165.8
+
+worldwide_vector <- rowSums(star_wars_matrix)
+             A New Hope The Empire Strikes Back      Return of the Jedi 
+                775.398                 538.375                 475.106
+                
+all_wars_matrix <- cbind(star_wars_matrix, worldwide_vector)
+                             US non-US worldwide_vector
+A New Hope              460.998  314.4          775.398
+The Empire Strikes Back 290.475  247.9          538.375
+Return of the Jedi      309.306  165.8          475.106
+
+#Combine two matrixes in one
+all_wars_matrix <- rbind(star_wars_matrix, star_wars_matrix2)
