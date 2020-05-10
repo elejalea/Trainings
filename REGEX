@@ -87,9 +87,15 @@ BAG-OF-WORDS
 from collections import Counter
 tokens = word_tokenize(article)
 lower_tokens = [t.lower() for t in tokens]
-
+                  
 # Create a Counter with the lowercase tokens
 bow_simple = Counter(lower_tokens)
 # Print the 10 most common tokens
 print(bow_simple.most_common(10))
+____________________________________________________________________
+# To strip punctuation and numbers
+tokens = [w for w in word_tokenize(text.lower()) if w.isalpha()]
+# To remove stopwords for English
+no_stops = [t for t in tokens if t not in stopwords.words('english')]
+print(Counter(no_stops).most_common(2))
 ____________________________________________________________________
