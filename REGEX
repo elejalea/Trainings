@@ -82,5 +82,14 @@ line_num_words = [len(t_line) for t_line in tokenized_lines]
 plt.hist(line_num_words)
 plt.show()
 ____________________________________________________________________
-TOPIC IDENTIFICATION
+BAG-OF-WORDS
 
+from collections import Counter
+tokens = word_tokenize(article)
+lower_tokens = [t.lower() for t in tokens]
+
+# Create a Counter with the lowercase tokens
+bow_simple = Counter(lower_tokens)
+# Print the 10 most common tokens
+print(bow_simple.most_common(10))
+____________________________________________________________________
