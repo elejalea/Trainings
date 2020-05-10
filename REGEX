@@ -62,6 +62,7 @@ print(regexp_tokenize(german_text, capital_words))
 emoji = "['\U0001F300-\U0001F5FF'|'\U0001F600-\U0001F64F'|'\U0001F680-\U0001F6FF'|'\u2600-\u26FF\u2700-\u27BF']"
 print(regexp_tokenize(german_text, emoji))
 ____________________________________________________________________
+# list comprehension
 word_lengths = [len(w) for w in words]
 
 from matplotlib import pyplot as plt
@@ -93,9 +94,26 @@ bow_simple = Counter(lower_tokens)
 # Print the 10 most common tokens
 print(bow_simple.most_common(10))
 ____________________________________________________________________
-# To strip punctuation and numbers
+# To remove non-alphabetic
 tokens = [w for w in word_tokenize(text.lower()) if w.isalpha()]
 # To remove stopwords for English
 no_stops = [t for t in tokens if t not in stopwords.words('english')]
 print(Counter(no_stops).most_common(2))
+____________________________________________________________________
+from nltk.stem import WordNetLemmatizer
+
+# Retain alphabetic words: alpha_only
+alpha_only = [t for t in lower_tokens if t.isalpha()]
+# Remove all stop words: no_stops
+no_stops = [t for t in alpha_only if t not in english_stops]
+
+# Instantiate the WordNetLemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
+# Lemmatize all tokens into a new list: lemmatized
+lemmatized = [wordnet_lemmatizer.lemmatize(t) for t in no_stops]
+
+# Create the bag-of-words: bow
+bow = Counter(lemmatized)
+# Print the 10 most common tokens
+print(bow.most_common(10))
 ____________________________________________________________________
