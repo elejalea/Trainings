@@ -171,4 +171,55 @@ d = {'banana': 3, 'apple': 4, 'pear': 1, 'orange': 2}
 # словарь, отсортированный по ключу
 OrderedDict(sorted(d.items(), key=lambda t: t[0]))
 OrderedDict([('apple', 4), ('banana', 3), ('orange', 2), ('pear', 1)])
+________________________________________________________________
+# Save the fifth document
+doc = corpus[4]
 
+# Sort the doc for frequency
+bow_doc = sorted(doc, key=lambda w: w[1], reverse=True)
+
+# Print the top 5 words of the doc
+for word_id, word_count in bow_doc[:5]:
+    print(dictionary.get(word_id), word_count)
+    
+# Create the defaultdict: total_word_count
+total_word_count = defaultdict(int)
+for word_id, word_count in itertools.chain.from_iterable(corpus):
+    total_word_count[word_id] += word_count
+    
+# Create a sorted list from the defaultdict, using words across the entire corpus.
+sorted_word_count = sorted(total_word_count.items(), key=lambda w: w[1], reverse=True) 
+
+# Print the top 5 words across all documents alongside the count
+for word_id, word_count in sorted_word_count[:5]:
+    print(dictionary.get(word_id), word_count) 
+________________________________________________________________
+from gensim.models.tfidfmodel import TfidfModel
+
+# Create a new TfidfModel using the corpus
+tfidf = TfidfModel(corpus)
+
+# Calculate the tfidf weights of doc
+tfidf_weights = tfidf[doc]
+
+# Print the first five weights
+print(tfidf_weights[:5])
+
+# Sort the weights from highest to lowest
+sorted_tfidf_weights = sorted(tfidf_weights, key=lambda w: w[1], reverse=True)
+
+# Print the top 5 weighted words (term_id) from sorted_tfidf_weights with their weighted score (weight)
+for term_id, weight in sorted_tfidf_weights[:5]:
+    print(dictionary.get(term_id), weight)
+________________________________________________________________
+Named Entity Recognition
+
+import nltk
+sentence = '''In New York, I like to ride the Metro to visit MOMA 
+and some restaurants rated well by Ruth Reichl.'''
+
+tokenized_sent = nltk.word_tokenize(sentence)
+tagged_sent = nltk.pos_tag(tokenized_sent)
+tagged_sent[:3]
+OUT: [('In', 'IN'), ('New', 'NNP'), ('York', 'NNP')]
+________________________________________________________________
