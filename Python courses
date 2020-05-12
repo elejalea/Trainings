@@ -429,6 +429,7 @@ def binary(x):
     while x > 0:
         y = x % 2
         s = str(y) + s
+# x = целая часть от деления x на 2 
         x //= 2
     return(s)
 
@@ -438,4 +439,21 @@ ________________________________________________________________
 # Range length
 print(len(range(1809, 1917)))
 OUT: 108
+________________________________________________________________
+from intertools import chain, zip_longest 
+import random 
+from string import ascii_letters 
+from functools import reduce 
+
+x = list(range(4)) 
+y = tuple(random.sample(ascii_letters, 3) 
+list(chain(x, y) 
+list(chain.from_iterable (x, y) 
+OUT: [[0, 1, 2, 3, 4], (I, n, S)] #nested
+[0, 1, 2, 3, 4, I, n, S] #unnested
+
+list(zip(x, y))
+list(zip_longest(x, y))
+OUT: [(0, 'I'), (1, 'n'), (2, 'S')]
+OUT: [(0, 'I'), (1, 'n'), (2, 'S'), (3, None), (4, None)]
 ________________________________________________________________
