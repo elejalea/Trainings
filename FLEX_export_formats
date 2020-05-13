@@ -1,0 +1,52 @@
+Kutx kχinneknen:
+Кутх сказал.
+
+# XLingPaper as examples, align words      
+<p>paragraph 3</p><example num="xa10383ef-3"><interlinear><lineGroup><line><wrd>
+<langData lang="itl-baseline">Kutx</langData></wrd><wrd><langData lang="itl-baseline">kχinneknen:</langData></wrd></line><line><wrd>
+<langData lang="itl-morpheme">Kutx</langData></wrd><wrd><langData lang="itl-morpheme">k-χinne-knen</langData></wrd></line><line><wrd>
+<langData lang="itl-lexEntry">Kutx</langData></wrd><wrd><langData lang="itl-lexEntry">k knenχenik knen</langData></wrd></line><line><wrd>
+<gloss lang="ru-lexGloss">Кутх</gloss></wrd><wrd><gloss lang="ru-lexGloss">INF.NARR-сказать-INF.NARR</gloss></wrd></line><line><wrd>
+<gloss lang="ru-gramInfo">собств</gloss></wrd><wrd><gloss lang="ru-gramInfo">Глагол-гл-Глагол</gloss></wrd></line><line><wrd>
+<gloss lang="ru-wordGloss">Кутх</gloss></wrd><wrd><gloss lang="ru-wordGloss">сказать</gloss></wrd></line><line><wrd>
+<gloss lang="ru-wordCategory">собств</gloss></wrd><wrd><gloss lang="ru-wordCategory">гл</gloss></wrd></line></lineGroup>
+<free lang="ru-free">Кутх сказал:</free></interlinear></example>
+
+# XLingPaper as examples, align morphemes
+      <paragraph>
+        <phrases>
+          <word><words>
+              <word><item type="txt" lang="itl">Kutx</item><item type="gls" lang="ru">Кутх</item><item type="pos" lang="ru">собств</item><morphemes>
+                  <morph type="stem" guid="d7f713e8-e8cf-11d3-9764-00c04f186933">
+                    <item type="txt" lang="itl">Kutx</item>
+                    <item type="cf" lang="itl">Kutx</item>
+                    <item type="gls" lang="ru">Кутх</item>
+                    <item type="msa" lang="ru">собств</item>
+                  </morph>
+                </morphemes></word>
+              <word><item type="txt" lang="itl">kχinneknen</item><item type="gls" lang="ru">сказать</item><item type="pos" lang="ru">гл</item><morphemes>
+                  <morph type="prefix" guid="d7f713db-e8cf-11d3-9764-00c04f186933">
+                    <item type="txt" lang="itl">k-</item>
+                    <item type="cf" lang="itl">k knen</item>
+                    <item type="gls" lang="ru">INF.NARR</item>
+                    <item type="msa" lang="ru">Глагол</item>
+                  </morph>
+                  <morph type="stem" guid="d7f713e8-e8cf-11d3-9764-00c04f186933">
+                    <item type="txt" lang="itl">χinne</item>
+                    <item type="cf" lang="itl">χeni</item>
+                    <item type="gls" lang="ru">сказать</item>
+                    <item type="msa" lang="ru">гл</item>
+                  </morph>
+                  <morph type="suffix" guid="d7f713dd-e8cf-11d3-9764-00c04f186933">
+                    <item type="txt" lang="itl">-knen</item>
+                    <item type="cf" lang="itl">k knen</item>
+                    <item type="gls" lang="ru">INF.NARR</item>
+                    <item type="msa" lang="ru">Глагол</item>
+                  </morph>
+                </morphemes></word>
+              <word><item type="punct" lang="itl">:</item></word>
+            </words><item type="segnum" lang="ru">3</item><item type="gls" lang="ru">Кутх сказал:</item></word>
+        </phrases>
+      </paragraph>
+      
+ 
