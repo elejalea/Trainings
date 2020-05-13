@@ -14,3 +14,7 @@ OUT: the_grail the_wedlock most_grail the_hand the_pin thy_hand for_grail most_
 # contexts that are shared by two or more words
 print(text6.common_contexts(["holy", "real"]))
 OUT: the_grail
+
+import matplotlib
+text1.dispersion_plot(["whale", "fish", "sea", "storm", "harpoon", "death", "fear", "water"])
+________________________________________________________________
