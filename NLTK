@@ -19,5 +19,31 @@ OUT: the_grail
 
 import matplotlib
 text1.dispersion_plot(["whale", "fish", "sea", "storm", "harpoon", "death", "fear", "water"])
+
+# Building ngram index
+text3.generate()
 ________________________________________________________________
 COUNTING VOCABULARY
+
+print('Уникальных токенов: ', len(set(text3)), 'Всего токенов: ', len(text3))
+OUT: Уникальных токенов:  2789 Всего токенов:  44764
+
+print(sorted(set(text3)))
+OUT: ['!', "'", '(', ')', ',', ',)', '.', '.)', ':', ';', ';)', '?', '?)', 'A', 'Abel', 'Abelmizraim', 'Abidah' ... 
+'yonder', 'you', 'young', 'younge', 'younger', 'youngest', 'your', 'yourselves', 'youth']
+
+print(text3.count("saint")) OUT: 0
+print(text3.count("lord")) OUT: 41
+print(text3.count("god")) OUT: 0
+print(text3.count("evil")) OUT: 16
+print(text3.count("apple")) OUT: 0
+print(text3.count("fruit")) OUT: 9
+
+# number of distinct words is 6% of the total number of words
+def lexical_diversity(text3):
+    return 100 * (text3.count("lord") / (len(text3)))
+OUT: 0.091591457421142
+________________________________________________________________
+
+
+
