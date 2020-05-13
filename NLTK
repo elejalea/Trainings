@@ -3,6 +3,8 @@ for line in open("file.txt"):
         if word.endswith('ing'):
             print(word)
 ________________________________________________________________
+SEARCHING TEXT
+
 from nltk.book import *
 
 print(text1.concordance("whale", width=80, lines=100))
@@ -18,3 +20,4 @@ OUT: the_grail
 import matplotlib
 text1.dispersion_plot(["whale", "fish", "sea", "storm", "harpoon", "death", "fear", "water"])
 ________________________________________________________________
+COUNTING VOCABULARY
