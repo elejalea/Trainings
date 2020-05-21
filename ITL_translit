@@ -55,14 +55,13 @@ def translit_element(line):
     return result
 
 
-filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
-filename_out = 'C:\Desktop\\volkovdict\\volkovdict_out.lift'
-
-
-def translit_file(filename, filename_out):
-        tree = ET.parse(filename)
-        root = tree.getroot(filename)
+def translit_file('C:\Desktop\\volkovdict\\volkovdict.lift', 'C:\Desktop\\volkovdict\\volkovdict_out.lift'):
+        tree = ET.parse('C:\Desktop\\volkovdict\\volkovdict.lift')
+        root = tree.getroot('C:\Desktop\\volkovdict\\volkovdict.lift')
         for element in root.findall('.//form/text'):
             translit_element(element)
             element.text = translit_element(element.text)
-        root.write(filename_out)
+        root.write('C:\Desktop\\volkovdict\\volkovdict_out.lift')
+
+
+translit_file('C:\Desktop\\volkovdict\\volkovdict.lift', 'C:\Desktop\\volkovdict\\volkovdict_out.lift')
