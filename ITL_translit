@@ -40,6 +40,7 @@ TRANSLIT_TABLE = {
 "ю" : "ju",
 "я" : "ja",
 "ə" : "ə",
+"ˀ" : "ˀ",
 "-" : "-",
 }
 
@@ -49,20 +50,20 @@ def translit_element(line):
     new_sym = ''
     result = ''
     for symbol in line:
-        if prev_sym in TRANSLIT_TABLE:
-            new_sym = TRANSLIT_TABLE.get(symbol.lower())
-            result += new_sym
+            new_sym = TRANSLIT_TABLE.get(symbol.lower(), symbol.lower())
+            result += str(new_sym)
     return result
+
 
 filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
 filename_out = 'C:\Desktop\\volkovdict\\volkovdict_out.lift'
 
 def translit_file(filename, filename_out):
         tree = ET.parse(filename)
-        root = tree.getroot(filename)
+        root = tree.getroot()
         for element in root.findall('.//form/text'):
             translit_element(element)
             element.text = translit_element(element.text)
-        root.write(filename_out)
+        tree.write(filename_out, encoding='utf-8')
 
 translit_file(filename, filename_out)
