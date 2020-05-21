@@ -1,26 +1,16 @@
-import sys
-
 TRANSLIT_TABLE = {
-"дя" : "ďa",
-"тя" : "ťa",
-"ня" : "ńa",
-"ся" : "śa",
-"де" : "ďə",
-"те" : "ťə",
-"не" : "ńə",
-"се" : "śə",
-"дю" : "ďu",
-"тю" : "ťu",
-"ню" : "ńu",
-"сю" : "śu",
-"дё" : "ďo",
-"дё̄" : "ďō",
-"тё" : "ťo",
-"нё" : "ńo",
-"сё" : "śo",
+"ӄ" : "q",
+"қ" : "q",
+"ӈ" : "ŋ",
+"ҳ" : "χ",
+"х" : "x",
+"ӽ" : "ťə",
+"њ" : "ɲ",
+"љ" : "l’",
+"ԓ" : "ɬ",
 "а" : "a",
 "б" : "b",
-"в" : "w",
+"в" : "v",
 "г" : "g",
 "д" : "d",
 "е" : "jə",
@@ -33,7 +23,6 @@ TRANSLIT_TABLE = {
 "л" : "l",
 "м" : "m",
 "н" : "n",
-"ӈ" : "ŋ",
 "о" : "o",
 "п" : "p",
 "р" : "r",
@@ -44,47 +33,25 @@ TRANSLIT_TABLE = {
 "ц" : "ts",
 "ч" : "č",
 "ш" : "š",
-"ы" : "ɨ",
-"э" : "ə",
+"ы" : "i",
+"э" : "e",
 "ю" : "ju",
 "я" : "ja",
-"h" : "h",
-"х" : "h",
-"." : "",
-"," : "",
-"?" : "",
-"!" : ""
+"ə" : "ə",
+"-" : "-",
 }
 
 
-def transliterate(line, mode):
-    line_result = ""
-    prev_symbol = ""
-    for symbol in line:
-        new_symbol = None
-        if prev_symbol != "":
-            possible_symbol = (prev_symbol + symbol).lower()
-            if possible_symbol in TRANSLIT_TABLE:
-                new_symbol = TRANSLIT_TABLE[possible_symbol]
-                line_result = line_result[:-1]
-        if new_symbol is None:
-            new_symbol = TRANSLIT_TABLE.get(symbol.lower(), symbol.lower())
-        line_result += new_symbol
-        prev_symbol = symbol
-    return line_result
+import sys
+import xml.etree.ElementTree as ET
 
+filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
 
-def transliterate_file(filename, mode):
-    filename_output = filename + '_out.txt'
-    with open(filename_output, 'w', encoding='utf-8', newline='\r\n') as fout:
-        with open(filename, 'r', encoding='utf-8') as fin:
-            for line in fin:
-                line_transliteration = transliterate(line.strip(), mode)
-                fout.write(line_transliteration)
-    print('written to %s' % filename_output)
-
-if len(sys.argv) < 2:
-    print('usage: transliterator <filename>')
-else:
-    filename = sys.argv[1]
-    transliterate_file(filename, None)
+def translit_file(filename, filename_out):
+    with open(filename, 'r', encoding='UTF-8'), open(filename_out, 'w', encoding='UTF-8'):
+        tree = ET.parse(filename)
+        root = tree.getroot(filename)
+        list_elements = get_list_elements(root)
+        for list_element in root.findall('.//form/text'):
+            translit_element(list_element)
+            root.write('filename_out.list')
