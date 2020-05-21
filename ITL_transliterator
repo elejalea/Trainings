@@ -42,6 +42,51 @@ TRANSLIT_TABLE = {
 }
 
 import sys
+
+
+TRANSLIT_TABLE = {
+"ӄ" : "q",
+"қ" : "q",
+"ӈ" : "ŋ",
+"ҳ" : "χ",
+"х" : "x",
+"ӽ" : "ťə",
+"њ" : "ɲ",
+"љ" : "l’",
+"ԓ" : "ɬ",
+"а" : "a",
+"б" : "b",
+"в" : "v",
+"г" : "g",
+"д" : "d",
+"е" : "jə",
+"ё" : "jo",
+"ж" : "ž",
+"з" : "z",
+"и" : "i",
+"й" : "j",
+"к" : "k",
+"л" : "l",
+"м" : "m",
+"н" : "n",
+"о" : "o",
+"п" : "p",
+"р" : "r",
+"с" : "s",
+"т" : "t",
+"у" : "u",
+"ф" : "f",
+"ц" : "ts",
+"ч" : "č",
+"ш" : "š",
+"ы" : "i",
+"э" : "e",
+"ю" : "ju",
+"я" : "ja",
+"ə" : "ə",
+"-" : "-",
+}
+import sys
 import xml.etree.ElementTree as ET
 
 filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
@@ -55,7 +100,7 @@ def translit_element(line):
         if prev_sym in TRANSLIT_TABLE:
             new_sym = TRANSLIT_TABLE.get(symbol.lower())
             result += new_sym
-        return result
+    return result
 
 
  def translit_file(filename, filename_out):
@@ -64,4 +109,6 @@ def translit_element(line):
         root = tree.getroot(filename)
         for element in root.findall('.//form/text'):
             translit_element(element)
+            element.text = translit_element(element.text)
         root.write('filename_out.list')
+
