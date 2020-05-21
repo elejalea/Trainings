@@ -1,3 +1,5 @@
+import xml.etree.ElementTree as ET
+
 TRANSLIT_TABLE = {
 "ӄ" : "q",
 "қ" : "q",
@@ -40,10 +42,6 @@ TRANSLIT_TABLE = {
 "ə" : "ə",
 "-" : "-",
 }
-import sys
-import xml.etree.ElementTree as ET
-
-filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
 
 
 def translit_element(line):
@@ -57,12 +55,14 @@ def translit_element(line):
     return result
 
 
- def translit_file(filename, filename_out):
-    with open(filename, 'r', encoding='UTF-8'), open(filename_out, 'w', encoding='UTF-8'):
+filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
+filename_out = 'C:\Desktop\\volkovdict\\volkovdict_out.lift'
+
+
+def translit_file(filename, filename_out):
         tree = ET.parse(filename)
         root = tree.getroot(filename)
         for element in root.findall('.//form/text'):
             translit_element(element)
             element.text = translit_element(element.text)
-        root.write('filename_out.list')
-
+        root.write(filename_out)
