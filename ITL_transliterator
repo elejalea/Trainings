@@ -58,10 +58,6 @@ def translit_element(line):
         return result
 
 
-new_sym = TRANSLIT_TABLE.get(symbol.lower(), symbol.lower())
-
-
-
  def translit_file(filename, filename_out):
     with open(filename, 'r', encoding='UTF-8'), open(filename_out, 'w', encoding='UTF-8'):
         tree = ET.parse(filename)
@@ -69,4 +65,3 @@ new_sym = TRANSLIT_TABLE.get(symbol.lower(), symbol.lower())
         for element in root.findall('.//form/text'):
             translit_element(element)
         root.write('filename_out.list')
-
