@@ -41,17 +41,27 @@ TRANSLIT_TABLE = {
 "-" : "-",
 }
 
-
 import sys
 import xml.etree.ElementTree as ET
 
 filename = 'C:\Desktop\\volkovdict\\volkovdict.lift'
 
-def translit_file(filename, filename_out):
+
+def translit_element(line):
+    prev_sym = ''
+    new_sym = ''
+    for symbol in line:
+        if prev_sym in TRANSLIT_TABLE:
+            new_sym = TRANSLIT_TABLE.get(symbol.lower(), symbol.lower())
+            prev_sym = new_sym
+            result = 
+        return result
+
+    
+ def translit_file(filename, filename_out):
     with open(filename, 'r', encoding='UTF-8'), open(filename_out, 'w', encoding='UTF-8'):
         tree = ET.parse(filename)
         root = tree.getroot(filename)
-        list_elements = get_list_elements(root)
-        for list_element in root.findall('.//form/text'):
-            translit_element(list_element)
-            root.write('filename_out.list')
+        for element in root.findall('.//form/text'):
+            def translit_element(element)
+        root.write('filename_out.list')
