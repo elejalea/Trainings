@@ -322,6 +322,21 @@ with open('input.txt') as inf:
         line = line.strip()
         print(line)
 ________________________________________________________________
+txt = """баргузинский,
+каларский,
+олёкминский,
+тунгирский,
+токкинский,"""
+words = txt.split()
+# for word in words:
+#      word = word.strip(,)
+#      print(word)
+
+for i,word in enumerate(words):
+    word = word.strip(",")
+    words[i] = word
+    print(word)
+________________________________________________________________
 inf = open('file.txt', 'w')
 inf.write('Some text\n')
 inf.write(str(25))
