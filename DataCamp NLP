@@ -56,6 +56,9 @@ tokenized_sent = word_tokenize(sentences[3])
 # Make a set of unique tokens in the entire scene: unique_tokens
 unique_tokens = set(word_tokenize(scene_one))
 ____________________________________________________________________
+# Search for the first occurrence of "evenki" in my_text
+match = re.search("evenki", my_text)
+____________________________________________________________________
 from nltk.tokenize import regexp_tokenize, TweetTokenizer 
 # Write a pattern that matches both mentions (@) and hashtags
 pattern2 = r"([@|#]\w+)"
@@ -64,8 +67,10 @@ mentions_hashtags = regexp_tokenize(tweets[-1], pattern2)
 print(mentions_hashtags)
 ____________________________________________________________________
 from nltk.tokenize import regexp_tokenize
+# Функция вызывает из класса
 from nltk.tokenize import TweetTokenizer
 # Use the TweetTokenizer to tokenize all tweets into one list
+# Создаётся экземпляр класса
 tknzr = TweetTokenizer()
 all_tokens = [tknzr.tokenize(t) for t in tweets]
 print(all_tokens)
@@ -88,7 +93,7 @@ from nltk.tokenize import word_tokenize
 # Split the script into lines: lines
 lines = holy_grail.split('\n')
 
-# Replace all script lines for speaker
+# Replace all script prompts (ARTHUR: and SOLDIER #1)
 pattern = "[A-Z]{2,}(\s)?(#\d)?([A-Z]{2,})?:"
 lines = [re.sub(pattern, '', l) for l in lines]
 
@@ -169,6 +174,7 @@ print(corpus[4][:10])
 ____________________________________________________________________
 DEFAULTDICT
 
+# defaultdict allows us to initialize a dictionary that will assign a default value to non-existent keys
 from collections import defaultdict
 d = defaultdict(object)
 print(d['A'])
